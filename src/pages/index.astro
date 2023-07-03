@@ -2,23 +2,37 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Bryon Sigawin">
   <main class="mx-auto p-8 flex justify-end flex-col h-screen font-light">
-    <div class="text-xl mb-6">
-      hi, my name is
-      <span class="bg-slate-200 px-0.5 font-medium">Bryon Sigawin</span>. i
-      design and build
-      <span class="bg-slate-200 px-0.5 font-medium">interactive websites</span>
-      and
-      <span class="bg-slate-200 px-0.5 font-medium">web applications</span>.
+    <div class="flex align-top gap-3">
+      <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-3"></div>
+      <div class="text-3xl mb-6">
+        hi, my name is
+        <span class="bg-slate-200 px-0.5 font-medium">Bryon Sigawin</span>. i
+        design and build
+        <span class="bg-slate-200 px-0.5 font-medium">interactive websites</span
+        >
+        and
+        <span class="bg-slate-200 px-0.5 font-medium">web applications</span>.
+      </div>
     </div>
-    <div class="text-xs">
-      hit me up on <a href="mailto:bryon.sigawin@gmail.com" class="underline"
-        >bryon.sigawin@gmail.com</a
-      >.
-    </div>
-    <div class="text-xs">
-      or find out what i've done on my <a href="#" class="underline">resume</a>.
+    <div class="flex align-top gap-3">
+      <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-1.5"></div>
+      <div>
+        <div class="text-xl">
+          hit me up on <a
+            href="mailto:bryon.sigawin@gmail.com"
+            class="underline">bryon.sigawin@gmail.com</a
+          >.
+        </div>
+        <div class="text-xl">
+          or find out what i've done on my <a
+            href="/bryon-sigawin-cv-2023.pdf"
+            target="_blank"
+            class="underline">resume</a
+          >.
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
