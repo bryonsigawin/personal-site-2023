@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Scene from "../components/Scene.astro";
 ---
 
 <Layout title="Bryon Sigawin">
   <main class="mx-auto p-8 flex justify-end flex-col h-screen font-light">
     <div class="flex align-top gap-3">
-      <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-3"></div>
+      <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-3.5"></div>
       <div class="text-3xl mb-6">
         hi, my name is
         <span class="bg-slate-200 px-0.5 font-medium">Bryon Sigawin</span>. i
@@ -17,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
     <div class="flex align-top gap-3">
-      <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-1.5"></div>
+      <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-3"></div>
       <div>
         <div class="text-xl">
           hit me up on <a
@@ -35,6 +36,12 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </main>
+
+  <Scene />
 </Layout>
+
+<script>
+  console.log("q");
+</script>
 
 <style></style>
