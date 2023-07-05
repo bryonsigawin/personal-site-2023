@@ -14,6 +14,9 @@ dependencies:
   '@typescript-eslint/parser':
     specifier: ^5.61.0
     version: 5.61.0(eslint@8.44.0)(typescript@5.1.6)
+  animejs:
+    specifier: ^3.2.1
+    version: 3.2.1
   astro:
     specifier: ^2.7.2
     version: 2.7.2
@@ -28,6 +31,9 @@ dependencies:
     version: 3.3.2
 
 devDependencies:
+  '@types/animejs':
+    specifier: ^3.1.7
+    version: 3.1.7
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -721,6 +727,10 @@ packages:
       tslib: 2.6.0
     dev: false
 
+  /@types/animejs@3.1.7:
+    resolution: {integrity: sha512-kFSyjM+fLo3oE9noWEtUvF82ttN8fTrKohiEMIrSzEzEjnsCmtO0rBCUQBlSPEb2w8vfN+v4/Zo0tK21Bgmq4g==}
+    dev: true
+
   /@types/babel__core@7.20.1:
     resolution: {integrity: sha512-aACu/U/omhdk15O4Nfb+fHgH/z3QsfQzpnvRZhYhThms83ZnAOZz7zZAWO7mn2yyNQaA4xTO8GLK3uqFU4bYYw==}
     dependencies:
@@ -895,6 +905,10 @@ packages:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+    dev: false
+
+  /animejs@3.2.1:
+    resolution: {integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==}
     dev: false
 
   /ansi-align@3.0.1:

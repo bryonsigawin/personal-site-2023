@@ -8,13 +8,18 @@ import Scene from "../components/Scene.astro";
     <div class="flex align-top gap-3">
       <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-3.5"></div>
       <div class="text-3xl mb-6">
-        hi, my name is
-        <span class="bg-slate-200 px-0.5 font-medium">Bryon Sigawin</span>. i
-        design and build
-        <span class="bg-slate-200 px-0.5 font-medium">interactive websites</span
+        <span>hi, my name is</span>
+        <span class="animated bg-slate-200 px-0.5 font-medium"
+          >Bryon Sigawin</span
+        >.
+        <span>i design and build</span>
+        <span class="animated bg-slate-200 px-0.5 font-medium"
+          >interactive websites</span
         >
-        and
-        <span class="bg-slate-200 px-0.5 font-medium">web applications</span>.
+        <span>and</span>
+        <span class="animated bg-slate-200 px-0.5 font-medium"
+          >web applications</span
+        >.
       </div>
     </div>
     <div class="flex align-top gap-3">
@@ -41,7 +46,52 @@ import Scene from "../components/Scene.astro";
 </Layout>
 
 <script>
-  console.log("q");
+  import anime from "animejs";
+
+  const texts = document.querySelectorAll(".animated");
+
+  texts.forEach((text, textIndex) => {
+    const textInCharCodes = text.innerHTML
+      .split("")
+      .map((v) => v.charCodeAt(0));
+    text.innerHTML = "";
+
+    const textAnimated = [];
+
+    const timeline = anime.timeline({
+      change: () => {
+        text.innerHTML = textAnimated
+          .map((code) => String.fromCharCode(code))
+          .join("");
+      },
+    });
+
+    textInCharCodes.forEach((v, i) => {
+      const progress = { value: 0 };
+
+      timeline.add(
+        {
+          targets: progress,
+          value: [v === 32 ? 32 : getRandomIntInclusive(97, 122), v],
+          duration: 1600,
+          delay: 1000 + 600 * textIndex + 1,
+          round: 1,
+          easing: "easeOutCirc",
+
+          change: () => {
+            textAnimated[i] = progress.value;
+          },
+        },
+        0 + i * 60
+      );
+    });
+  });
+
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  }
 </script>
 
 <style></style>
