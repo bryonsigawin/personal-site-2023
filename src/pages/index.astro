@@ -4,7 +4,11 @@ import Scene from "../components/Scene.astro";
 ---
 
 <Layout title="Bryon Sigawin">
-  <main class="mx-auto p-8 flex justify-end flex-col h-screen font-light">
+  <Scene />
+
+  <main
+    class="relative mx-auto p-8 flex justify-end flex-col h-screen font-light"
+  >
     <div class="flex align-top gap-3">
       <div class="rounded bg-teal-600 w-1 h-1 flex-none mt-3.5"></div>
       <div class="text-3xl mb-6">
@@ -32,17 +36,25 @@ import Scene from "../components/Scene.astro";
           >.
         </div>
         <div class="text-xl">
-          or find out what i've done on my <a
+          or find out what i've done on / <a
             href="/bryon-sigawin-cv-2023.pdf"
             target="_blank"
-            class="underline">resume</a
+            class="underline">my resume</a
+          > / <a
+            href="https://www.linkedin.com/in/bryon-sigawin/"
+            target="_blank"
+            rel="noopener"
+            class="underline">linkedin</a
+          > / <a
+            href="https://github.com/bryonsigawin"
+            target="_blank"
+            rel="noopener"
+            class="underline">github</a
           >.
         </div>
       </div>
     </div>
   </main>
-
-  <Scene />
 </Layout>
 
 <script>
