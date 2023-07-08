@@ -14,6 +14,7 @@
     "@astrojs/tailwind": "^4.0.0",
     "@astrojs/ts-plugin": "^1.0.10",
     "@fontsource/iosevka-curly": "^5.0.3",
+    "@react-three/drei": "^9.78.1",
     "@react-three/fiber": "^8.13.4",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
