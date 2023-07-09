@@ -43,5 +43,7 @@ function Camera() {
     state.camera.updateProjectionMatrix();
   });
 
-  return <OrthographicCamera makeDefault position={[20, 20, 20]} zoom={120} />;
+  const isSmallScreen = window.innerWidth < 698;
+
+  return <OrthographicCamera makeDefault position={[20, 20, 20]} zoom={isSmallScreen ? 60 : 120} />;
 }
