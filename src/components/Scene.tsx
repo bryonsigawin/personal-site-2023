@@ -1,24 +1,39 @@
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrthographicCamera } from "@react-three/drei";
+import {
+  OrbitControls,
+  OrthographicCamera,
+  useHelper,
+} from "@react-three/drei";
 import { Physics, RigidBody } from "@react-three/rapier";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Model } from "./Model";
+import { PointLightHelper } from "three";
 
 export default function Scene() {
   return (
     <div className="absolute w-screen h-screen t-0 l-0">
       <Canvas>
-        <pointLight position={[10, 10, 10]} />
+        <Lights />
         <Camera />
         <Suspense>
-          <Physics gravity={[0, -9.81 * 2, 0]} >
+          <Physics gravity={[0, -9.81 * 2, 0]}>
             <Model />
           </Physics>
         </Suspense>
       </Canvas>
     </div>
+  );
+}
+function Lights() {
+  return (
+    <>
+      <ambientLight intensity={0.3} />
+      <pointLight position={[0, 5, 5]} color="#5eead4" intensity={0.8} />
+      <pointLight position={[5, 5, 0]} color="#f87171" intensity={0.8} />
+      <pointLight position={[0, 5, 0]} />
+    </>
   );
 }
 
@@ -28,5 +43,5 @@ function Camera() {
     state.camera.updateProjectionMatrix();
   });
 
-  return <OrthographicCamera makeDefault position={[20, 20, 20]} zoom={90} />;
+  return <OrthographicCamera makeDefault position={[20, 20, 20]} zoom={120} />;
 }

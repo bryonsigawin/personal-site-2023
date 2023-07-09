@@ -68,7 +68,7 @@ import Scene from "../components/Scene";
       .map((v) => v.charCodeAt(0));
     text.innerHTML = "";
 
-    const textAnimated = [];
+    const textAnimated: string[] = [];
 
     const timeline = anime.timeline({
       change: () => {
