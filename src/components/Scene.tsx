@@ -1,5 +1,10 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Suspense } from "react";
+
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrthographicCamera } from "@react-three/drei";
+import { Physics, RigidBody } from "@react-three/rapier";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { Model } from "./Model";
 
 export default function Scene() {
   return (
@@ -7,10 +12,11 @@ export default function Scene() {
       <Canvas>
         <pointLight position={[10, 10, 10]} />
         <Camera />
-        <mesh position={[0, 1, 0]}>
-          <boxGeometry args={[8, 0.5, 8]} />
-          <meshStandardMaterial color="white" />
-        </mesh>
+        <Suspense>
+          <Physics gravity={[0, -9.81 * 2, 0]} >
+            <Model />
+          </Physics>
+        </Suspense>
       </Canvas>
     </div>
   );
@@ -22,5 +28,5 @@ function Camera() {
     state.camera.updateProjectionMatrix();
   });
 
-  return <OrthographicCamera makeDefault position={[5, 5, 5]} zoom={40} />;
+  return <OrthographicCamera makeDefault position={[20, 20, 20]} zoom={90} />;
 }
