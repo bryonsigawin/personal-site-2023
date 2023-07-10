@@ -39,8 +39,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="LegBridges"
-          castShadow
-          receiveShadow
           geometry={nodes.LegBridges.geometry}
           material={tempMat}
           position={[-0.97, 20 + randomHeight(), -0.133]}
@@ -49,8 +47,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="Laptop"
-          castShadow
-          receiveShadow
           geometry={nodes.Laptop.geometry}
           material={tempMat}
           position={[-0.923, 25 + randomHeight(), 0.482]}
@@ -60,8 +56,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="Lamp"
-          castShadow
-          receiveShadow
           geometry={nodes.Lamp.geometry}
           material={tempMat}
           position={[-1.349, 30 + randomHeight(), -0.99]}
@@ -71,8 +65,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="Chair"
-          castShadow
-          receiveShadow
           geometry={nodes.Chair.geometry}
           material={tempMat}
           position={[0.321, 25 + randomHeight(), 0.122]}
@@ -82,8 +74,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="Book001"
-          castShadow
-          receiveShadow
           geometry={nodes.Book001.geometry}
           material={tempMat}
           position={[-0.646, 23 + randomHeight(), -0.995]}
@@ -93,8 +83,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="Cabinet"
-          castShadow
-          receiveShadow
           geometry={nodes.Cabinet.geometry}
           material={tempMat}
           position={[1.498, 28 + randomHeight(), -1.342]}
@@ -103,8 +91,6 @@ export function Model(props) {
       <RigidBody>
         <mesh
           name="Guitar"
-          castShadow
-          receiveShadow
           geometry={nodes.Guitar.geometry}
           material={tempMat}
           position={[0.906, 24 + randomHeight(), -1.305]}

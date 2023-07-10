@@ -1,15 +1,10 @@
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {
-  OrbitControls,
-  OrthographicCamera,
-  useHelper,
-} from "@react-three/drei";
-import { Physics, RigidBody } from "@react-three/rapier";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrthographicCamera } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
+
 import { Model } from "./Model";
-import { PointLightHelper } from "three";
 
 export default function Scene() {
   return (
@@ -29,10 +24,10 @@ export default function Scene() {
 function Lights() {
   return (
     <>
-      <ambientLight intensity={0.3} />
-      <pointLight position={[0, 5, 5]} color="#5eead4" intensity={0.8} />
-      <pointLight position={[5, 5, 0]} color="#f87171" intensity={0.8} />
-      <pointLight position={[0, 5, 0]} />
+      <ambientLight intensity={0.2} />
+      <pointLight position={[0, 5, 5]} color="#90bcee" intensity={2} />
+      <pointLight position={[5, 5, 0]} color="#be5103" intensity={2} />
+      <pointLight position={[0, 5, 0]} intensity={0.5} />
     </>
   );
 }
@@ -45,5 +40,11 @@ function Camera() {
 
   const isSmallScreen = window.innerWidth < 698;
 
-  return <OrthographicCamera makeDefault position={[20, 20, 20]} zoom={isSmallScreen ? 60 : 120} />;
+  return (
+    <OrthographicCamera
+      makeDefault
+      position={[20, 20, 20]}
+      zoom={isSmallScreen ? 60 : 120}
+    />
+  );
 }
