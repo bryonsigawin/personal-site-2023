@@ -8,7 +8,10 @@ import "@fontsource/iosevka-curly/500.css";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Hello! I'm a front-end developer of sorts." />
+    <meta
+      name="description"
+      content="Hello! I'm a front-end developer of sorts."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -16,6 +19,19 @@ import "@fontsource/iosevka-curly/500.css";
   </head>
   <body>
     <slot />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-20NFEM3WW3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-20NFEM3WW3");
+    </script>
   </body>
 </html>
 
