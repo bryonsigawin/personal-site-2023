@@ -18,7 +18,7 @@ export function Model(props) {
   transparentMaterial.transparent = true;
   transparentMaterial.opacity = 0.0;
 
-  const tempMat = new MeshStandardMaterial({ color: '#00000' });
+  const tempMat = new MeshStandardMaterial({ color: '#ffffff' });
 
   return (
     <group {...props} dispose={null} position={[0, 0, 0]}>
