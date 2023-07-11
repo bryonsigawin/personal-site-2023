@@ -73,7 +73,7 @@ import Scene from "../components/Scene";
     const timeline = anime.timeline({
       change: () => {
         text.innerHTML = textAnimated
-          .map((code) => String.fromCharCode(code))
+          .map((code) => String.fromCharCode(parseInt(code, 10)))
           .join("");
       },
     });
@@ -91,7 +91,7 @@ import Scene from "../components/Scene";
           easing: "easeOutCirc",
 
           change: () => {
-            textAnimated[i] = progress.value;
+            textAnimated[i] = progress.value.toString();
           },
         },
         0 + i * 60
@@ -99,11 +99,9 @@ import Scene from "../components/Scene";
     });
   });
 
-  function getRandomIntInclusive(min, max) {
+  function getRandomIntInclusive(min: number, max: number) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
   }
 </script>
-
-<style></style>
