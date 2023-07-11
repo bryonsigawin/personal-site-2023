@@ -8,8 +8,8 @@ import { RigidBody } from "@react-three/rapier";
 import { motion } from "framer-motion-3d";
 
 const randomHeight = (min = -1, max = 1): number => {
-    return Math.random() * (max - min) + min;
-}
+  return Math.random() * (max - min) + min;
+};
 
 export function Model(props) {
   const { nodes, materials } = useGLTF("/page.glb");
@@ -18,7 +18,7 @@ export function Model(props) {
   transparentMaterial.transparent = true;
   transparentMaterial.opacity = 0.0;
 
-  const tempMat = new MeshStandardMaterial({ color: '#ffffff' });
+  const tempMat = new MeshStandardMaterial({ color: "#ffffff" });
 
   return (
     <group {...props} dispose={null} position={[0, 0, 0]}>
